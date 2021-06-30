@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: convert
+spec:
+  selector:
+    matchLabels:
+      app: convert
+  template:
+    metadata:
+      labels:
+        app: convert
+    spec:
+      containers:
+        - name: convert
+          image: jmsstudio/api-conversao:v1
+          ports:
+            - containerPort: 8080
